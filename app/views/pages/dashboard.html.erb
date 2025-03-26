@@ -2,4 +2,12 @@
 
 <h1>Dashdoard</h1>
     <%= button_to "Logout", session_path, method: :delete %>
+
+    
+
+  <%= form_with url: "#", method: :get, local: true do |form| %>
+    <%= form.text_area :user_input,placeholder: "IP Address",rows: 1, cols: 15 %>
+    <%= form.submit "Submit" %>
+  <% end %>
+
 </div>
