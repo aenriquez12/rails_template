@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#home"
   get "dashboard", to: "pages#dashboard"
+  get "register_account", to: "pages#register", as: :register_account
+  get "forgot_password", to: "passwords#new", as: :forgot_password
 end
