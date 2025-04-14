@@ -1,0 +1,9 @@
+<h1>IP Lookup Result</h1>
+
+<% if @result["error"] %>
+  <p>Error: <%= @result["error"] %></p>
+<% else %>
+  <pre><%= JSON.pretty_generate(@result) %></pre>
+<% end %>
+
+<%= link_to "Back", new_ip_lookup_path %>
