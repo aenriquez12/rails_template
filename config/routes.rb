@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resource :session
+  resource :session, only: [ :new, :create, :destroy ]
   resources :passwords, param: :token
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :ip_lookups, only: [:new, :create]
@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#home"
   get "dashboard", to: "pages#dashboard"
+  get "register_account", to: "pages#register", as: :register_account
+  get "forgot_password", to: "passwords#new", as: :forgot_password
 end

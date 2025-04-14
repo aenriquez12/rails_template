@@ -1,13 +1,37 @@
-<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
-<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
-<div>
-  <h2>Sign in</h2>
-  </div>
-<%= form_with url: session_path do |form| %>
-  <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address] %><br>
-  <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72 %><br>
-  <%= form.submit "Sign in" %>
-<% end %>
-<br>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card p-4 shadow" style="width: 400px;">
+    <h2 class="text-center mb-4">Sign In</h2>
 
-<%= link_to "Forgot password?", new_password_path %>
+    <!-- Flash Messages -->
+    <% if flash[:alert] %>
+      <div class="alert alert-danger" role="alert">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+    <% if flash[:notice] %>
+      <div class="alert alert-success" role="alert">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <!-- Sign In - turbo does wonky stuff so false-->
+    <%= form_with url: session_path, method: :post, local: true, data: { turbo: false } do |form| %>
+  <div class="mb-3">
+    <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, class: "form-control" %>
+  </div>
+  <div class="text-center">
+    <%= form.submit "Sign In", class: "btn btn-primary w-100" %>
+  </div>
+<% end %>
+
+    <!-- Forgot Password Link -->
+    <div class="text-center mt-3">
+      <%= link_to "Forgot password?", new_password_path, class: "btn btn-link" %>
+      <br>
+      <%= link_to "Back to Home", root_path, class: "btn btn-link" %>
+    </div>
+  </div>
+</div>
