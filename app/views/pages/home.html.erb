@@ -1,4 +1,11 @@
-<div class=space-y-12>
-    <h1>Home</h1>
-    <%= link_to "Login", new_session_path %>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="text-center">
+    <h1 class="mb-4">IP Tracker Tool</h1>
+    <div class="card p-4 shadow" style="width: 400px;">
+      <div class="text-center">
+        <%= link_to "Login", new_session_path, class: "btn btn-primary w-100 mb-3" %>
+        <%= link_to "Register New Account", register_account_path, class: "btn btn-link" %>
+      </div>
+    </div>
+  </div>
 </div>

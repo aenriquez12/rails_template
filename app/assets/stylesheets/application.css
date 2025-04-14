@@ -1,0 +1,9 @@
+@import "bootstrap";
+
+body {
+    background-color: #eefaf1;
+  }
+  
+  h1 {
+    color: #343a40; /* Dark gray for headings */
+  }
