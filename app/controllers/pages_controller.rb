@@ -5,11 +5,11 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    if current_user&.admin?
+    if authenticated?
       render :dashboard
+    else
+      redirect_to new_session_path, alert: "You must be signed in."
     end
-
-    redirect_to new_session_path unless authenticated?
   end
 
   def register
