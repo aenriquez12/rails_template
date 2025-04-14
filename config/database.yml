@@ -9,8 +9,8 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  database: database_lsop # CHANGE THIS TO YOUR OWN DATABASE NAME IN RENDER
-  username: database_lsop_user # CHANGE THIS TO YOUR OWN DATABASE USERNAME IN RENDER
+  database: mysite_nnj8 # CHANGE THIS TO YOUR OWN DATABASE NAME IN RENDER
+  username: mysite # CHANGE THIS TO YOUR OWN DATABASE USERNAME IN RENDER
   password: <%= ENV['DATABASE_PASSWORD'] %> # DO NOT MODIFY THIS LINE!
   url: <%= ENV['DATABASE_URL'] %> # DO NOT MODIFY THIS LINE!
  
