@@ -1,0 +1,9 @@
+<h1>IP Lookup</h1>
+
+<%= form_with url: ip_lookups_path, method: :post do %>
+  <div>
+    <%= label_tag :ip, "Enter IP Address" %>
+    <%= text_field_tag :ip %>
+  </div>
+  <%= submit_tag "Lookup" %>
+<% end %>
