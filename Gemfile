@@ -66,6 +66,8 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "dotenv-rails"
+
 end
 
 group :test do
@@ -77,4 +79,5 @@ group :test do
   gem "database_cleaner"
   gem "factory_bot_rails"
   gem "faker", "~> 3.5"
+  gem "webmock"
 end
