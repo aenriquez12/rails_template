@@ -1,7 +1,9 @@
 <div class="container d-flex justify-content-center align-items-center vh-100">
   <div class="text-center">
     <h1 class="mb-4">Dashboard</h1>
-    <%= button_to "Logout", session_path, method: :delete, class: "btn btn-danger mb-4" %>
+    <% if current_user %>
+  <%= click_link "Logout", logout_path, method: :delete%>
+<% end %>
 
     <div class="card p-4 shadow" style="width: 400px;">
       <%= form_with url: "#", method: :get, local: true do |form| %>

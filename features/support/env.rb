@@ -5,6 +5,7 @@
 # files.
 
 require 'cucumber/rails'
+require 'factory_bot_rails'
 require 'capybara'
 
 # By default, any exception happening in your Rails application will bubble up
@@ -53,3 +54,4 @@ end
 Cucumber::Rails::Database.javascript_strategy = :truncation
 # Allows factories to run in cucumber tests
 World(FactoryBot::Syntax::Methods)
+

@@ -15,9 +15,9 @@ Feature: User Login
   Scenario: Logging in with incorrect credentials
     Given I am on the login page
     When I enter my username "user@example.com"
-    And I enter an incorrect password "wrongpassword"
+    And I enter my password "wrongpassword"
     And I click the login button
-    Then I should see an error message "Invalid username or password"
+    Then I should see an error message "Invalid email or password"
 
   Scenario: Logging out
     Given I am logged in
